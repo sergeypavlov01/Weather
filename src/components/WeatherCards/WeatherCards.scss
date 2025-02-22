@@ -1,0 +1,6 @@
+@use '../../styles/helpers' as *;
+
+.cards {
+    display: flex;
+    column-gap: #{rem(24)};
+}

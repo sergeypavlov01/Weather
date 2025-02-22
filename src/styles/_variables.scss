@@ -1,0 +1,19 @@
+@use 'helpers' as *;
+
+:root {
+    --color-light: #FFFFFF;
+    --color-dark-gray: #9e9ea7;
+    --color-light-gray: #D2D2D2;
+    --color-accent: #EEA135;
+    --color-global: #328FD1;
+    --color-dark-blue: #5F90CF;
+
+    --hover: #BD9391;
+
+    --font-family-base: 'Inter', sans-serif;
+
+    --container-width: #{rem(700)};
+    --container-padding-x: #{rem(135)};
+
+    --transition-duration: 0.2s;
+} 

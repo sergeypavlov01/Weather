@@ -1,0 +1,30 @@
+@use '../../styles/helpers' as *;
+
+.home {
+    &__image {
+        &-inner {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__icon {
+        width: #{rem(363)};
+
+        &-image {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        font-size: #{rem(96)};
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: #{rem(36)};
+        color: var(--color-accent);
+        margin-bottom: #{rem(29)};
+    }
+}

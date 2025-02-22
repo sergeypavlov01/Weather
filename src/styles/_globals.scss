@@ -1,0 +1,57 @@
+@use "helpers" as *;
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family-base);
+    font-size: #{rem(24)};
+    color: var(--color-light);
+}
+
+.weather-app {
+    background-color: var(--color-global);
+    border-radius: #{rem(35)};
+    width: #{rem(800)};
+    height: #{rem(880)};
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    color: inherit;
+
+    &[class] {
+        text-decoration: none;
+    }
+}
+
+.link, .title {
+    position: relative;
+
+    &--active {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 35%;
+            width: 30%;
+            height: #{rem(2)};
+            border-radius: #{rem(10)};
+            background-color: var(--color-light);
+        }
+    }
+}
+
+.loading {
+    text-align: center;
+}

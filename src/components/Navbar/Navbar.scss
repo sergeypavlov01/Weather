@@ -1,0 +1,56 @@
+@use "../../styles/helpers" as *;
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: #{rem(80)};
+    height: #{rem(54)};
+
+    &__details {
+        color: var(--color-light);
+    }
+
+    &__search-field {
+        position: relative;
+        max-width: #{rem(255)};
+    }
+
+    &__search-input {
+        width: 100%;
+        color: var(--color-dark-gray);
+        border-radius: #{rem(8)};
+        border: 2px solid transparent;
+        padding-block: #{rem(10)};
+        padding-left: #{rem(20)};
+        padding-right: #{rem(44)};
+        font-size: #{rem(20)};
+        outline: none;
+
+        &::placeholder {
+            color: var(--color-dark-gray);
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+            border-color: var(--hover);
+            background-color: #fff;
+            box-shadow: 0 0 0 4px var(--color-dark);
+        }
+    }
+
+    &__icon {
+        @include square(25);
+
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        top: #{rem(15)};
+        right: #{rem(20)};
+        background-image: url("../../../public/icons/Search.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

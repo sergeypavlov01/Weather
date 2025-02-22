@@ -1,0 +1,15 @@
+@use '../../../styles/helpers' as *;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: #{rem(67)};
+
+    &__icon {
+        &-image {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

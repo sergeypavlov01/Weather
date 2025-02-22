@@ -1,0 +1,35 @@
+@use '../../styles/helpers' as *;
+
+.temperature-range {
+    @include ai-center;
+    column-gap: #{rem(7)};
+    
+
+    &__max {
+        @include ai-center
+    }
+
+    &__min {
+        @include ai-center
+    }
+
+    &__icon {
+        display: inline-block;
+        width: #{rem(17)};
+        height: #{rem(17)};
+        background-image: url("../../../public/icons/arrow-top.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__desc {
+
+    }
+
+    &__line {
+        width: #{rem(12)};
+        height: #{rem(1)};
+        background-color: rgba($color: #A6A6A6, $alpha: 0.5);
+        transform: rotate(90deg);
+    }
+}

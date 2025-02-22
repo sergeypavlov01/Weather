@@ -1,0 +1,27 @@
+@use '../../styles/helpers' as *;
+
+.header {
+    padding-top: #{rem(29)};
+    margin-bottom: #{rem(67)};
+
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &-container {
+            max-width: #{rem(800)};
+            padding-inline: #{rem(50)};
+        }
+    }
+
+    &__burger-button {
+        position: absolute;
+        top: calc(50% - #{rem(7)});
+        left: #{rem(50)};
+    }
+
+    &__city {
+        position: relative;
+    }
+}

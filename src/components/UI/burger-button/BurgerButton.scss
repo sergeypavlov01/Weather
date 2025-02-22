@@ -1,0 +1,31 @@
+@use '../../../styles/helpers' as *;
+
+.burger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: #{rem(7)};
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+    &__line {
+        display: inline-block;
+        width: 100%;
+        width: #{rem(30)};
+        height: #{rem(3)};
+        border-radius: #{rem(10)};
+        background-color: var(--color-light);
+        transition-duration: var(--transition-duration);
+    }
+
+    &--active {
+        .burger-button__first-line {
+            transform: translate(0, 5px) rotate(45deg);
+        }
+    
+        .burger-button__second-line {
+            transform: translate(0, -5px) rotate(-45deg);
+        }
+    }
+}
