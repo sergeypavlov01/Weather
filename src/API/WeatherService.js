@@ -3,7 +3,7 @@ export default class WeatherService {
 
     static async getTodayForecast(city) {
         const response = await fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=${this.apiKey}&q=${city}&days=1&aqi=no&alerts=no`
+            `http://api.weatherapi.com/v1/forecast.json?key=${this.apiKey}&q=${city}&days=2&aqi=no&alerts=no`
         );
 
         return response;

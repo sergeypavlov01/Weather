@@ -1,6 +1,7 @@
 @use '../../styles/helpers' as *;
 
 .home {
+
     &__image {
         &-inner {
             display: flex;
@@ -9,7 +10,8 @@
     }
 
     &__icon {
-        width: #{rem(363)};
+        width: #{rem(300)};
+        height: #{rem(300)};
 
         &-image {
             width: 100%;

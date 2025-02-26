@@ -17,9 +17,16 @@
         display: inline-block;
         width: #{rem(17)};
         height: #{rem(17)};
-        background-image: url("../../../public/icons/arrow-top.svg");
         background-size: contain;
         background-repeat: no-repeat;
+
+        &-top {
+            background-image: url("../../../public/icons/arrow-top.svg");
+        }
+
+        &-bottom {
+            background-image: url("../../../public/icons/arrow-bottom.svg");
+        }
     }
 
     &__desc {

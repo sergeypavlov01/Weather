@@ -1,0 +1,9 @@
+@use '../../styles/helpers' as *;
+
+.error {
+    @include flex-center;
+
+    &__message {
+        text-align: center;
+    }
+}

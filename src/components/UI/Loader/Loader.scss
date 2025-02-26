@@ -1,0 +1,25 @@
+@use '../../../styles/helpers' as *;
+
+.loader {
+    display: flex;
+    justify-content: center;
+
+    .spinner {
+        @include square(50);
+
+        display: inline-block;
+        border-radius: 50%;
+        background: conic-gradient(#0000, 10%, var(--color-accent));
+        -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+        animation-name: spinner-rotation;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }  
+}
+
+@keyframes spinner-rotation {
+    to {
+        transform: rotate(1turn);
+    }
+}

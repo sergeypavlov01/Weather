@@ -4,7 +4,8 @@ import { City } from '../UI/city/City';
 import { useState } from 'react';
 import { Navbar } from '../Navbar/Navbar';
 
-export const Header = ({ isLoadedError, city, changeCity }) => {
+export const Header = ({ city, changeCity }) => {
+    
     const [isActive, setIsActive] = useState(false);
     
     return (
@@ -13,7 +14,7 @@ export const Header = ({ isLoadedError, city, changeCity }) => {
                 <BurgerButton active={isActive} onClick={() => setIsActive(!isActive)}/>
                 {isActive
                     ? <Navbar changeCity={changeCity} hideNavbar={() => setIsActive(false)}/>
-                    : <City isLoadedError={isLoadedError} city={city}/>
+                    : <City city={city}/>
                 }
             </div>
         </header>
