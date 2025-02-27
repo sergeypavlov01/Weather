@@ -9,7 +9,6 @@ export const WeatherCards = ({ today }) => {
     const [forecasts, setForecasts] = useState([]);
 
     useEffect(() => {
-        console.log('useEffect ЦИКЛ')
         const forecastData = [];
 
         for (let i = 0; i < 6; i++) {

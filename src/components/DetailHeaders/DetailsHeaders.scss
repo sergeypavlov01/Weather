@@ -1,0 +1,21 @@
+@use '../../styles/helpers' as *;
+
+.details__headers {
+    &-list {
+        @include ai-center;
+    }
+
+    &-item {
+        
+    }
+
+    &-date {
+        @include ai-center;
+        column-gap: #{rem(31)};
+    }
+
+    &-desc {
+        // max-width: #{rem(99)};
+        text-align: center;
+    }
+}

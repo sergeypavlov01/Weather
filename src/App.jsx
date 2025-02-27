@@ -1,10 +1,10 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router";
+import { BrowserRouter } from "react-router";
 import { WeatherApp } from "./components/WeatherApp/WeatherApp";
 
 export const App = () => {
     return (
-        <Router>
+        <BrowserRouter>
             <WeatherApp />
-        </Router>
+        </BrowserRouter>
     );
 };

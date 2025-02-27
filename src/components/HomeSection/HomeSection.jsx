@@ -16,20 +16,22 @@ export const HomeSection = ({ today }) => {
 
     const isNight = localTime >= 0 && localTime < 6;
     const isDay = localTime >= 6 && localTime < 18;
-    // const isEvening = localTime >= 18 && localTime <= 23;
 
     const conditionWeather = {
         ['Day Cloudy']: cloudyIcon,
+        ['Day Overcast']: cloudyIcon,
         ['Day Sunny']: sunnyIcon,
         ['Day Clear']: sunnyIcon,
         ['Day Partly cloudy']: sunAndCloudsIcon,
         ['Day Light rain']: cloudsRainIcon,
         ['Evening Cloudy']: cloudyIcon,
+        ['Evening Overcast']: cloudyIcon,
         ['Evening Clear']: moonIcon,
         ['Evening Partly cloudy']: sunAndCloudsIcon,
         ['Evening Light rain']: cloudsRainIcon,
         ['Night Light rain']: cloudsRainIcon,
         ['Night Clear']: moonIcon,
+        ['Night Overcast']: cloudyIcon,
         ['Night Partly cloudy']: moonAndCloudyIcon,
     }
 

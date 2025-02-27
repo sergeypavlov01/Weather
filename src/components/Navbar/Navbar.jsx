@@ -1,19 +1,24 @@
 import './Navbar.scss'
-import { useState } from 'react';
-import { Link } from 'react-router';
+import { CityContext } from '../context';
+import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
 
-export const Navbar = ({ changeCity, hideNavbar }) => {
+export const Navbar = ({ hideNavbar }) => {
     const [value, setValue] = useState('');
+    const { setNewCity } = useContext(CityContext)
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        changeCity(value);
+        navigate('/');
+        setNewCity(value);
         hideNavbar();
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        changeCity(value)
-        hideNavbar()
+        e.preventDefault();
+        navigate('/');
+        setNewCity(value);
+        hideNavbar();
     }
 
     return (

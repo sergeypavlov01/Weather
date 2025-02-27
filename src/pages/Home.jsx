@@ -1,11 +1,13 @@
 import { HomeSection } from "../components/HomeSection/HomeSection";
 import { Loader } from "../components/UI/Loader/Loader";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useFetching } from "../hooks/useFetching";
 import WeatherService from "../API/WeatherService";
+import { CityContext } from "../components/context";
 
-export const Home = ({ city }) => {
+export const Home = () => {
     const [todayForecast, setTodayForecast] = useState(null);
+    const { city } = useContext(CityContext);
     const [fetchPosts, isLoadingForecast, error] = useFetching(async () => {
         const response = await WeatherService.getTodayForecast(city);
         const json = await response.json();

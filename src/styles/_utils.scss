@@ -6,6 +6,11 @@
     padding-inline: var(--container-padding-x);
 }
 
+.container-max {
+    max-width: #{rem(800)};
+    padding-inline: #{rem(50)};
+}
+
 .visully-hidden {
     @include visually-hidden;
 }

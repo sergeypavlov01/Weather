@@ -1,7 +1,10 @@
+import { DetailsHeaders } from "../components/DetailHeaders/DetailsHeaders";
+
 export const Details = () => {
     return (
-        <div>
-            <h1>Подробные детали</h1>
-        </div>
+        <section className="details">
+            <DetailsHeaders />
+            <div className="details__lists"></div>
+        </section>
     );
 };

@@ -8,11 +8,6 @@
         position: relative;
         display: flex;
         justify-content: center;
-
-        &-container {
-            max-width: #{rem(800)};
-            padding-inline: #{rem(50)};
-        }
     }
 
     &__burger-button {
