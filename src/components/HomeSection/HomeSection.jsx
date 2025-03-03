@@ -1,11 +1,6 @@
-import sunAndCloudsIcon from "../../../public/icons/big-icons/sun-and-clouds.svg";
-import cloudyIcon from "../../../public/icons/big-icons/clouds.svg";
-import sunnyIcon from "../../../public/icons/big-icons/sunny.svg";
-import moonIcon from "../../../public/icons/big-icons/moon-and-stars.svg";
-import moonAndCloudyIcon from "../../../public/icons/big-icons/moon-and-cloudy.svg";
-import cloudsRainIcon from "../../../public/icons/big-icons/clouds-rain.svg";
 import { RangeTemp } from "../RangeTemp/RangeTemp";
 import { WeatherCards } from "../WeatherCards/WeatherCards";
+import { conditionWeather } from "../../utils/icons";
 import "./HomeSection.scss";
 
 export const HomeSection = ({ today }) => {
@@ -17,25 +12,8 @@ export const HomeSection = ({ today }) => {
     const isNight = localTime >= 0 && localTime < 6;
     const isDay = localTime >= 6 && localTime < 18;
 
-    const conditionWeather = {
-        ['Day Cloudy']: cloudyIcon,
-        ['Day Overcast']: cloudyIcon,
-        ['Day Sunny']: sunnyIcon,
-        ['Day Clear']: sunnyIcon,
-        ['Day Partly cloudy']: sunAndCloudsIcon,
-        ['Day Light rain']: cloudsRainIcon,
-        ['Evening Cloudy']: cloudyIcon,
-        ['Evening Overcast']: cloudyIcon,
-        ['Evening Clear']: moonIcon,
-        ['Evening Partly cloudy']: sunAndCloudsIcon,
-        ['Evening Light rain']: cloudsRainIcon,
-        ['Night Light rain']: cloudsRainIcon,
-        ['Night Clear']: moonIcon,
-        ['Night Overcast']: cloudyIcon,
-        ['Night Partly cloudy']: moonAndCloudyIcon,
-    }
-
-    console.log(today)
+    // console.log('RENDER HOME SECTION')
+    // console.log(today)
 
     return (
         <section className="home">

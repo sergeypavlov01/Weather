@@ -9,6 +9,8 @@ export const WeatherApp = () => {
         setCity(newCity);
     };
 
+    localStorage.setItem('city', city);
+
     return (
         <CityContext.Provider value={{ city, setNewCity }}>
             <div className="weather-app">

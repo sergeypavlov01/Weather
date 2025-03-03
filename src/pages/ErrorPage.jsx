@@ -1,9 +1,12 @@
-import { Error } from "../components/Error/Error"
+import { useLocation } from "react-router"
+import { ErrorSection } from "../components/Error/Error"
 
-export const ErrorPage = ({ error }) => {
+export const ErrorPage = () => {
+    const location = useLocation();
+
     return (
         <>
-            <Error errorMessage={error}/>
+            <ErrorSection error={location.state}/>
         </>
     )
 }

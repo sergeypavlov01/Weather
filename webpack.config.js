@@ -33,9 +33,10 @@ module.exports = (env) => {
         devtool: isDev ? "inline-source-map" : false,
         devServer: isDev
             ? {
-                  port: env.port ?? 3000,
-                  open: true,
-                  historyApiFallback: true,
+                hot: true,
+                port: env.port ?? 3000,
+                open: true,
+                historyApiFallback: true,
               }
             : undefined,
         module: {
@@ -55,7 +56,7 @@ module.exports = (env) => {
                     test: /\.(png|svg|jpg|jpeg|gif)$/i,
                     type: "asset/resource",
                     generator: {
-                        filename: "assets/images/[name][ext]",
+                        filename: "assets/images/[name].[contenthash][ext]",
                     },
                 },
                 {

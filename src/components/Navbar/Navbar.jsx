@@ -11,6 +11,7 @@ export const Navbar = ({ hideNavbar }) => {
     const handleClick = () => {
         navigate('/');
         setNewCity(value);
+        localStorage.setItem('city', value);
         hideNavbar();
     }
 
@@ -18,6 +19,7 @@ export const Navbar = ({ hideNavbar }) => {
         e.preventDefault();
         navigate('/');
         setNewCity(value);
+        localStorage.setItem('city', value);
         hideNavbar();
     }
 

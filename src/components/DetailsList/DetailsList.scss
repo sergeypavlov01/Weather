@@ -1,0 +1,57 @@
+@use "../../styles/helpers" as *;
+
+.details__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: #{rem(31)};
+}
+
+.details__times-day {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-text {
+        font-size: #{rem(20)};
+        color: var(--color-light-gray);
+    }
+}
+
+.details__item {
+    display: flex;
+}
+
+.details__item:not(:last-child, :first-child) {
+    justify-content: center;
+}
+
+.details__times-day-item {
+    justify-content: flex-start;
+    width: #{rem(110)};
+}
+
+.details__icon-item {
+    margin-left: #{rem(20)};
+}
+
+.details__pressure-item {
+    width: #{rem(60)};
+    margin-left: #{rem(40)};
+}
+
+.details__humidity-item {
+    width: #{rem(65)};
+    margin-left: #{rem(70)};
+}
+
+.details__wind-speed-item {
+    width: #{rem(65)};
+    margin-left: #{rem(60)};
+}
+
+.details__feels-like-item {
+    justify-content: flex-end;
+    width: #{rem(60)};
+    margin-left: #{rem(30)};
+}

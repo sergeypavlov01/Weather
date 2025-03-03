@@ -11,6 +11,11 @@
     padding-inline: #{rem(50)};
 }
 
+.container-rigth {
+    max-width: #{rem(800)};
+    padding-inline: #{rem(90)} #{rem(50)}
+}
+
 .visully-hidden {
     @include visually-hidden;
 }
