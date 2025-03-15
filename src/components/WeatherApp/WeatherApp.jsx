@@ -4,12 +4,14 @@ import { CityContext } from "../context";
 import { AppRouter } from "../AppRouter/AppRouter";
 
 export const WeatherApp = () => {
-    const [city, setCity] = useState("Moscow");
+    const [city, setCity] = useState(localStorage.getItem('city') ?? 'Moscow');
     const setNewCity = (newCity) => {
         setCity(newCity);
     };
 
-    localStorage.setItem('city', city);
+    if (!localStorage.getItem('city')) {
+        localStorage.setItem('city', city);
+    }
 
     return (
         <CityContext.Provider value={{ city, setNewCity }}>

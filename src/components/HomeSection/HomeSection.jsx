@@ -9,11 +9,13 @@ export const HomeSection = ({ today }) => {
     
     const localTime = new Date(today.location.localtime).getHours()
 
-    const isNight = localTime >= 0 && localTime < 6;
     const isDay = localTime >= 6 && localTime < 18;
+    const isEvening = localTime >= 18 && localTime < 24;
+    const isNigth = localTime >= 0 && localTime < 6;
+    const isPartlyCloudy = today.current.condition.text === 'Partly cloudy';
 
     // console.log('RENDER HOME SECTION')
-    // console.log(today)
+    console.log(today)
 
     return (
         <section className="home">
@@ -21,11 +23,13 @@ export const HomeSection = ({ today }) => {
                 <div className="home__image-inner container">
                     <div className="home__icon">
                         <img
-                            src={isDay 
-                                    ? conditionWeather[`Day ${today.current.condition.text}`]
-                                    : isNight 
-                                        ? conditionWeather[`Night ${today.current.condition.text}`]
-                                        : conditionWeather[`Evening ${today.current.condition.text}`]
+                            src={isDay && isPartlyCloudy
+                                    ? conditionWeather[`${today.current.condition.text} Day`]
+                                    : isEvening && isPartlyCloudy
+                                    ? conditionWeather[`${today.current.condition.text} Night`]
+                                    : isNigth && isPartlyCloudy
+                                    ? conditionWeather[`${today.current.condition.text} Night`]
+                                    : conditionWeather[today.current.condition.text]
                                 }
                             className="home__icon-image"
                             alt=""

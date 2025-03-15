@@ -17,14 +17,28 @@ export const Details = () => {
             );
             const weatherData = await response.json();
 
+            console.log(weatherData)
+
             const morningForecast = weatherData.forecast.forecastday[0].hour[9];
             const afternoonForecast =
                 weatherData.forecast.forecastday[0].hour[15];
             const eveningForecast =
                 weatherData.forecast.forecastday[0].hour[21];
-            const nigthForecast = weatherData.forecast.forecastday[0].hour[3];
+            const nightForecast = weatherData.forecast.forecastday[0].hour[3];
 
-            setDate(new Date(weatherData.location.localtime))
+            const getConditionText = (forecast, hour) => {
+                const conditionText = forecast.condition.text.trim();
+                const isDay = hour >= 6 && hour < 18
+                const timeOfDay = isDay ? 'Day' : 'Night';
+
+                if (conditionText === 'Partly Cloudy') {
+                    return `Partly Cloudy ${timeOfDay}`
+                }
+
+                return conditionText
+            }
+
+            setDate(new Date(weatherData.location.localtime));
 
             setDetails([
                 {
@@ -32,48 +46,44 @@ export const Details = () => {
                     timesDay: "Morning",
                     minTemp: getMinTemp(6, 11, weatherData),
                     maxTemp: getMaxTemp(6, 11, weatherData),
-                    icon: detailsIcon[`${morningForecast.condition.text}`],
+                    icon: detailsIcon[getConditionText(morningForecast, 9)],
                     pressure: morningForecast.pressure_mb,
                     humidity: morningForecast.humidity,
-                    humidity: morningForecast.humidity,
                     windSpeed: morningForecast.wind_kph,
-                    feelsLike: morningForecast.feelslike_c,
+                    feelsLike: Math.round(morningForecast.feelslike_c),
                 },
                 {
                     id: 2,
                     timesDay: "Afternoon",
                     minTemp: getMinTemp(12, 17, weatherData),
                     maxTemp: getMaxTemp(12, 17, weatherData),
-                    icon: detailsIcon[`${afternoonForecast.condition.text}`],
+                    icon: detailsIcon[getConditionText(afternoonForecast, 15)],
                     pressure: afternoonForecast.pressure_mb,
                     humidity: afternoonForecast.humidity,
-                    humidity: afternoonForecast.humidity,
                     windSpeed: afternoonForecast.wind_kph,
-                    feelsLike: afternoonForecast.feelslike_c,
+                    feelsLike: Math.round(afternoonForecast.feelslike_c),
                 },
                 {
                     id: 3,
                     timesDay: "Evening",
                     minTemp: getMinTemp(18, 23, weatherData),
                     maxTemp: getMaxTemp(18, 23, weatherData),
-                    icon: detailsIcon[`${eveningForecast.condition.text}`],
+                    icon: detailsIcon[getConditionText(eveningForecast, 21)],
                     pressure: eveningForecast.pressure_mb,
                     humidity: eveningForecast.humidity,
-                    humidity: eveningForecast.humidity,
                     windSpeed: eveningForecast.wind_kph,
-                    feelsLike: eveningForecast.feelslike_c,
+                    feelsLike: Math.round(eveningForecast.feelslike_c),
                 },
                 {
                     id: 4,
                     timesDay: "Nigth",
                     minTemp: getMinTemp(0, 5, weatherData),
                     maxTemp: getMaxTemp(0, 5, weatherData),
-                    icon: detailsIcon[`${nigthForecast.condition.text}`],
-                    pressure: nigthForecast.pressure_mb,
-                    humidity: nigthForecast.humidity,
-                    humidity: nigthForecast.humidity,
-                    windSpeed: nigthForecast.wind_kph,
-                    feelsLike: nigthForecast.feelslike_c,
+                    icon: detailsIcon[getConditionText(nightForecast, 3)],
+                    pressure: nightForecast.pressure_mb,
+                    humidity: nightForecast.humidity,
+                    windSpeed: nightForecast.wind_kph,
+                    feelsLike: Math.round(nightForecast.feelslike_c),
                 },
             ]);
         }
@@ -83,7 +93,7 @@ export const Details = () => {
 
     useEffect(() => {
         if (detailsError) {
-            navigate('/error', { state:  detailsError})
+            navigate("/error", { state: detailsError });
         } else {
             fetchDetails();
         }
@@ -115,7 +125,7 @@ export const Details = () => {
                 <Loader />
             ) : details ? (
                 <>
-                    {date && <DetailsHeaders date={date}/>}
+                    {date && <DetailsHeaders date={date} />}
                     <DetailsLists details={details} />
                 </>
             ) : null}
